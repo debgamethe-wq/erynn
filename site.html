@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Беляев Алексей | Диктор</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --bg: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+            --card-bg: rgba(255, 255, 255, 0.1);
+            --text: #ffffff;
+            --accent: #00d2ff;
+            --fl-ru: #ff6d00;
+            --yt: #ff0000;
+            --border: rgba(255, 255, 255, 0.15);
+        }
+
+        .light-theme {
+            --bg: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            --card-bg: rgba(255, 255, 255, 0.7);
+            --text: #2d3436;
+            --accent: #0984e3;
+            --border: rgba(0, 0, 0, 0.1);
+        }
+
+        * { box-sizing: border-box; transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); }
+
+        body {
+            margin: 0;
+            padding: 20px;
+            font-family: 'Inter', -apple-system, sans-serif;
+            background: var(--bg);
+            background-attachment: fixed;
+            color: var(--text);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .theme-toggle {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            padding: 12px;
+            border-radius: 50%;
+            cursor: pointer;
+            color: var(--text);
+            backdrop-filter: blur(10px);
+            z-index: 100;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 45px;
+            height: 45px;
+        }
+
+        .container {
+            background: var(--card-bg);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid var(--border);
+            border-radius: 32px;
+            padding: 40px 25px;
+            width: 100%;
+            max-width: 400px;
+            text-align: center;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+        }
+
+        h1 { margin: 0 0 8px 0; font-size: 28px; letter-spacing: -0.5px; font-weight: 800; }
+        .spec { color: var(--accent); font-weight: 600; margin-bottom: 20px; display: block; font-size: 16px; opacity: 0.9; }
+        
+        .bio {
+            font-size: 16px;
+            line-height: 1.4;
+            margin-bottom: 30px;
+            padding: 15px;
+            border-radius: 20px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--border);
+        }
+
+        .label {
+            text-align: left;
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin: 25px 0 12px 10px;
+            opacity: 0.6;
+            font-weight: 700;
+        }
+
+        .grid { display: grid; gap: 10px; }
+
+        .btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            padding: 16px;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid var(--border);
+            border-radius: 18px;
+            color: var(--text);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 15px;
+        }
+
+        .btn:hover {
+            transform: scale(1.02);
+            background: rgba(255, 255, 255, 0.1);
+            border-color: var(--accent);
+        }
+
+        .featured-yt { border: 2px solid var(--yt); color: var(--yt); }
+        .featured-fl { border: 2px solid var(--fl-ru); color: var(--fl-ru); box-shadow: 0 0 15px rgba(255, 109, 0, 0.15); }
+
+        .btn i { font-size: 20px; }
+
+        @media (max-width: 480px) {
+            .container { padding: 30px 20px; }
+            h1 { font-size: 24px; }
+        }
+    </style>
+</head>
+<body>
+
+    <button class="theme-toggle" onclick="toggleTheme()">
+        <i class="fas fa-moon" id="theme-icon"></i>
+    </button>
+
+    <div class="container">
+        <h1>Беляев Алексей</h1>
+        <span class="spec">Диктор & Чтец</span>
+
+        <p class="bio">
+            Привет! Я Алексей — начинающий диктор из Астаны.
+        </p>
+
+        <div class="label">Социальные сети</div>
+        <div class="grid">
+            <a href="https://www.youtube.com/@Erynn4k" class="btn featured-yt" target="_blank">
+                <i class="fab fa-youtube"></i> YouTube
+            </a>
+            <a href="https://www.tiktok.com/@erynnvrr" class="btn" target="_blank">
+                <i class="fab fa-tiktok"></i> TikTok
+            </a>
+            <a href="https://www.instagram.com/erynn4k/" class="btn" target="_blank">
+                <i class="fab fa-instagram"></i> Instagram
+            </a>
+        </div>
+
+        <div class="label">Заказать озвучку</div>
+        <div class="grid">
+            <a href="https://fl.ru" class="btn featured-fl" target="_blank">
+                <i class="fas fa-briefcase"></i> FL.ru
+            </a>
+            <a href="https://kwork.ru" class="btn" target="_blank"><i class="fas fa-bolt"></i> Kwork</a>
+            <a href="https://work-zilla.com" class="btn" target="_blank"><i class="fas fa-microchip"></i> Work-Zilla</a>
+        </div>
+    </div>
+
+    <script>
+        function toggleTheme() {
+            const body = document.body;
+            const icon = document.getElementById('theme-icon');
+            body.classList.toggle('light-theme');
+            
+            if (body.classList.contains('light-theme')) {
+                icon.classList.replace('fa-moon', 'fa-sun');
+            } else {
+                icon.classList.replace('fa-sun', 'fa-moon');
+            }
+        }
+    </script>
+</body>
+</html>
